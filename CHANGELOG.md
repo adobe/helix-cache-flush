@@ -1,3 +1,10 @@
+# 1.0.0 (2020-07-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-status to v8 ([c0d3dc4](https://github.com/adobe/helix-cache-flush/commit/c0d3dc42d2fbe67350110049edd2ae09dd12d851))
+
 ## [1.8.42](https://github.com/adobe/helix-service/compare/v1.8.41...v1.8.42) (2020-06-29)
 
 
