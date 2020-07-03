@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/adobe/helix-cache-flush/compare/v1.0.2...v1.0.3) (2020-07-03)
+
+
+### Bug Fixes
+
+* implement initial action ([#6](https://github.com/adobe/helix-cache-flush/issues/6)) ([6cefc9d](https://github.com/adobe/helix-cache-flush/commit/6cefc9d23220fc853c9495bc472be1ff96b0dfc7))
+
 ## [1.0.2](https://github.com/adobe/helix-cache-flush/compare/v1.0.1...v1.0.2) (2020-07-03)
 
 
