@@ -21,6 +21,9 @@ commands:
           name: install latest npm
           command: sudo npm -g install npm
       - run:
+          name: configure npm registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run:
           name: Installing Dependencies
           command: npm ci
       - save_cache:
