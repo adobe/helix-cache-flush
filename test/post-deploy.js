@@ -28,7 +28,7 @@ describe('Post-Deploy Tests', () => {
       api_key: process.env.WSK_AUTH,
       apihost: process.env.WSK_APIHOST || 'https://adobeioruntime.net',
     };
-    if (process.env.CIRCLE_BUILD_NUM) {
+    if (process.env.CIRCLE_BUILD_NUM && process.env.CIRCLE_BRANCH !== 'master') {
       version = `ci${process.env.CIRCLE_BUILD_NUM}`;
     }
     // eslint-disable-next-line no-template-curly-in-string
