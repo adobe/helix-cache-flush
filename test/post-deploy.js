@@ -21,15 +21,18 @@ describe('Post-Deploy Tests', () => {
   const namespace = process.env.WSK_NAMESPACE;
   let wskOpts = {};
   let actionName;
+  let { version } = pkgJson;
 
   before(() => {
     wskOpts = {
       api_key: process.env.WSK_AUTH,
       apihost: process.env.WSK_APIHOST || 'https://adobeioruntime.net',
     };
-    const ci = process.env.CIRCLE_BUILD_NUM;
+    if (process.env.CIRCLE_BUILD_NUM) {
+      version = `ci${process.env.CIRCLE_BUILD_NUM}`;
+    }
     // eslint-disable-next-line no-template-curly-in-string
-    actionName = pkgJson.wsk.name.replace('${version}', ci ? `ci${ci}` : pkgJson.version);
+    actionName = pkgJson.wsk.name.replace('${version}', version);
   });
 
   it('Service responds to healthcheck', async () => {
@@ -50,11 +53,11 @@ describe('Post-Deploy Tests', () => {
           activation: ret.activationId,
         },
         status: 'OK',
-        version: pkgJson.version,
+        version,
       },
       headers: {
         'Content-Type': 'application/json',
-        'X-Version': pkgJson.version,
+        'X-Version': version,
       },
       statusCode: 200,
     });
