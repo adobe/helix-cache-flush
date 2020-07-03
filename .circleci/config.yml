@@ -68,7 +68,7 @@ jobs:
           command: export WSK_AUTH="$WSK_AUTH_INDEX"
       - run:
           nane: reset WSK_NAMESPACE variable from context
-          command: export WSK_AUTH="helix-index"
+          command: export WSK_NAMESPACE="helix-index"
       - run:
           name: Semantic Release
           command: npm run semantic-release
