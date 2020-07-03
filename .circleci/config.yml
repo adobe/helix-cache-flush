@@ -79,7 +79,7 @@ jobs:
           path: junit
       - run:
           name: Link Sequences
-          command: npm run deploy-sequences
+          command:  WSK_AUTH="$WSK_AUTH_INDEX" npm run deploy-sequences
       # see https://circleci.com/orbs/registry/orb/adobe/helix-post-deploy
       # for more available parameters
       - helix-post-deploy/monitoring:
