@@ -82,11 +82,11 @@ jobs:
           command:  WSK_AUTH="$WSK_AUTH_INDEX" npm run deploy-sequences
       # see https://circleci.com/orbs/registry/orb/adobe/helix-post-deploy
       # for more available parameters
-      - helix-post-deploy/monitoring:
-          statuspage_name: Helix Cache Flush Service
-          statuspage_group: Delivery
-          newrelic_group_policy: Delivery Repeated Failure
-          incubator: true # remove only when promoting service to production
+      #- helix-post-deploy/monitoring:
+      #    statuspage_name: Helix Cache Flush Service
+      #    statuspage_group: Delivery
+      #    newrelic_group_policy: Delivery Repeated Failure
+      #    incubator: true # remove only when promoting service to production
 
   branch-deploy:
     executor: node10
