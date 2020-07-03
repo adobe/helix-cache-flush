@@ -13,19 +13,35 @@ const { wrap } = require('@adobe/openwhisk-action-utils');
 const { logger } = require('@adobe/openwhisk-action-logger');
 const { wrap: status } = require('@adobe/helix-status');
 const { epsagon } = require('@adobe/helix-epsagon');
+const { Change } = require('@adobe/helix-task-support');
 
 /**
- * This is the main function
- * @param {string} name name of the person to greet
- * @returns {object} a greeting
+ * Runtime action.
+ *
+ * @param {object} params parameters
  */
-function main({ name = 'world' }) {
-  return {
-    body: `Hello, ${name}.`,
-  };
+async function run(params) {
+  const {
+    owner, repo, ref, __ow_logger: log,
+  } = params;
+
+  if (!owner) {
+    throw new Error('owner parameter missing.');
+  }
+  if (!repo) {
+    throw new Error('repo parameter missing.');
+  }
+  if (!ref) {
+    throw new Error('ref parameter missing.');
+  }
+
+  const change = Change.fromParams(params);
+
+  log.info(`received change event on ${owner}/${repo}/${ref}: ${JSON.stringify(change)}`);
+  return { };
 }
 
-module.exports.main = wrap(main)
+module.exports.main = wrap(run)
   .with(epsagon)
   .with(status)
   .with(logger.trace)
