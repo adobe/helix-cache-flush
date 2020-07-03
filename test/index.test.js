@@ -15,16 +15,45 @@
 'use strict';
 
 const assert = require('assert');
+const { logging } = require('@adobe/helix-testutils');
 const index = require('../src/index.js').main;
 
 describe('Index Tests', () => {
-  it('index function is present', async () => {
-    const result = await index({});
-    assert.deepEqual(result, { body: 'Hello, world.' });
+  it('index function accepts a change payload', async () => {
+    const logger = logging.createTestLogger();
+    const result = await index({
+      __ow_logger: logger,
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'onedrive',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          path: '/helix-content/sub/welcome.docx',
+          time: '2020-07-01T10:22:18Z',
+          type: 'modified',
+        },
+        mountpoint: { path: '/office/', root: '/helix-content' },
+      },
+    });
+    const out = logger.getOutput();
+    assert.equal(out, 'info: received change event on tripodsan/helix-pages-test/master: {"_path":"/office/sub/welcome.docx","_uid":"uJoyhgL7Iyii3HtM","_type":"modified"}\n');
+    assert.deepEqual(result, { });
   });
 
-  it('index function returns an object', async () => {
-    const result = await index();
-    assert.equal(typeof result, 'object');
+  it('rejects payload w/o owner', async () => {
+    const result = await index({ owner: '', repo: 'repo', ref: 'ref' });
+    assert.deepEqual(result, { statusCode: 500 });
+  });
+
+  it('rejects payload w/o repo', async () => {
+    const result = await index({ owner: 'owner', repo: '', ref: 'ref' });
+    assert.deepEqual(result, { statusCode: 500 });
+  });
+
+  it('rejects payload w/o ref', async () => {
+    const result = await index({ owner: 'owner', repo: 'repo', ref: '' });
+    assert.deepEqual(result, { statusCode: 500 });
   });
 });
