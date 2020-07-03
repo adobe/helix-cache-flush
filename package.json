@@ -19,7 +19,7 @@
   },
   "wsk": {
     "__TODO__": "It must be possible to run this in the customers namespace.",
-    "namespace": "helix",
+    "namespace": "helix-index",
     "name": "helix-services/cache-flush@${version}",
     "web-export": false
   },

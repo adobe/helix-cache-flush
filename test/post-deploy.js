@@ -29,7 +29,7 @@ describe('Post-Deploy Tests', () => {
     };
     const ci = process.env.CIRCLE_BUILD_NUM;
     // eslint-disable-next-line no-template-curly-in-string
-    actionName = pkgJson.wsk.name.replace('${version}', ci ? `ci$${ci}` : pkgJson.version);
+    actionName = pkgJson.wsk.name.replace('${version}', ci ? `ci${ci}` : pkgJson.version);
   });
 
   it('Service responds to healthcheck', async () => {
