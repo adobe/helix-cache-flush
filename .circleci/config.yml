@@ -99,6 +99,12 @@ jobs:
           name: Configure OpenWhisk
           command: echo -e "APIHOST=https://adobeioruntime.net\nNAMESPACE=helix-index\nAUTH=$WSK_AUTH_INDEX\n" > ~/.wskprops
       - run:
+          name: Configure Environment (wsk_auth)
+          command: echo -e "WSK_AUTH=$WSK_AUTH_INDEX\n" >> .env
+      - run:
+          name: Configure Environment (wsk_namespace)
+          command: echo -e "WSK_NAMESPACE=helix-index\n" >> .env
+      - run:
           name: Branch Deployment
           command: npm run deploy-ci
       - run:
