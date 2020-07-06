@@ -60,15 +60,7 @@ jobs:
           name: revert changes to package-lock.json
           command: git checkout -- package-lock.json
       - helix-post-deploy/config-env
-      - run:
-          name: Configure OpenWhisk
-          command: echo -e "APIHOST=https://adobeioruntime.net\nNAMESPACE=helix-index\nAUTH=$WSK_AUTH_INDEX\n" > ~/.wskprops
-      - run:
-          name: Configure Environment (wsk_auth)
-          command: echo -e "WSK_AUTH=$WSK_AUTH_INDEX\n" >> .env
-      - run:
-          name: Configure Environment (wsk_namespace)
-          command: echo -e "WSK_NAMESPACE=helix-index\n" >> .env
+      - helix-post-deploy/config-wsk
       - run:
           name: Semantic Release
           command: npm run semantic-release
@@ -79,9 +71,10 @@ jobs:
           path: junit
       - run:
           name: Link Sequences
-          command:  WSK_AUTH="$WSK_AUTH_INDEX" npm run deploy-sequences
+          command: npm run deploy-sequences
       # see https://circleci.com/orbs/registry/orb/adobe/helix-post-deploy
       # for more available parameters
+      # currently disabled until monitory script supports non-web actions
 #      - helix-post-deploy/monitoring:
 #          statuspage_name: Helix Cache Flush Service
 #          statuspage_group: Delivery
@@ -95,15 +88,7 @@ jobs:
       - run:
           name: revert changes to package-lock.json
           command: git checkout -- package-lock.json
-      - run:
-          name: Configure OpenWhisk
-          command: echo -e "APIHOST=https://adobeioruntime.net\nNAMESPACE=helix-index\nAUTH=$WSK_AUTH_INDEX\n" > ~/.wskprops
-      - run:
-          name: Configure Environment (wsk_auth)
-          command: echo -e "WSK_AUTH=$WSK_AUTH_INDEX\n" >> .env
-      - run:
-          name: Configure Environment (wsk_namespace)
-          command: echo -e "WSK_NAMESPACE=helix-index\n" >> .env
+      - helix-post-deploy/config-wsk
       - run:
           name: Branch Deployment
           command: npm run deploy-ci
@@ -119,6 +104,7 @@ workflows:
     jobs:
       - build
       - branch-deploy:
+          context: Project Helix
           requires:
             - build
           filters:
