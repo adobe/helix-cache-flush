@@ -10,7 +10,6 @@
     "test-postdeploy": "mocha --reporter xunit --reporter-options output=./junit/test-results.xml -g 'Post-Deploy'",
     "lint": "./node_modules/.bin/eslint .",
     "semantic-release": "semantic-release",
-    "docs": "npx jsdoc2md -c .jsdoc.json --files 'src/*.js'  > docs/API.md",
     "commit": "git-cz",
     "build": "wsk-builder -v",
     "deploy": "wsk-builder -v --deploy --test-params __ow_path=/_status_check/healthcheck.json",
@@ -18,9 +17,8 @@
     "deploy-ci": "wsk-builder -v --deploy --test-params __ow_path=/_status_check/healthcheck.json --pkgVersion=ci$CIRCLE_BUILD_NUM -l ci"
   },
   "wsk": {
-    "__TODO__": "It must be possible to run this in the customers namespace.",
-    "namespace": "helix-index",
-    "name": "helix-services/cache-flush@${version}",
+    "namespace": "helix",
+    "name": "helix-observation/cache-flush@${version}",
     "web-export": false
   },
   "repository": {
