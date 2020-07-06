@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/adobe/helix-cache-flush/compare/v1.0.3...v1.1.0) (2020-07-06)
+
+
+### Features
+
+* move to /helix/helix-observation ([#11](https://github.com/adobe/helix-cache-flush/issues/11)) ([b78a67d](https://github.com/adobe/helix-cache-flush/commit/b78a67d8f2656edae92100fb681b2e0e7d7f4579)), closes [#8](https://github.com/adobe/helix-cache-flush/issues/8)
+
 ## [1.0.3](https://github.com/adobe/helix-cache-flush/compare/v1.0.2...v1.0.3) (2020-07-03)
 
 
