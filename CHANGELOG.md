@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/adobe/helix-cache-flush/compare/v1.1.0...v1.1.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-task-support to v1.3.0 ([#13](https://github.com/adobe/helix-cache-flush/issues/13)) ([7d75ca6](https://github.com/adobe/helix-cache-flush/commit/7d75ca6da1af22fcc310049611a15ada5df8f991))
+
 # [1.1.0](https://github.com/adobe/helix-cache-flush/compare/v1.0.3...v1.1.0) (2020-07-06)
 
 
