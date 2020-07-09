@@ -14,8 +14,11 @@
 
 'use strict';
 
+process.env.HELIX_FETCH_FORCE_HTTP1 = 'true';
+
 const assert = require('assert');
 const { logging } = require('@adobe/helix-testutils');
+const nock = require('nock');
 const index = require('../src/index.js').main;
 
 describe('Index Tests', () => {
@@ -37,8 +40,63 @@ describe('Index Tests', () => {
         mountpoint: { path: '/office/', root: '/helix-content' },
       },
     });
-    const out = logger.getOutput();
-    assert.equal(out, 'info: received change event on tripodsan/helix-pages-test/master: {"_path":"/office/sub/welcome.docx","_uid":"uJoyhgL7Iyii3HtM","_type":"modified"}\n');
+    const out = logger.getOutput().trim().split('\n');
+    assert.deepEqual(out, [
+      'info: received change event on tripodsan/helix-pages-test/master { type: \'onedrive\', change: { uid: \'uJoyhgL7Iyii3HtM\', path: \'/helix-content/sub/welcome.docx\', time: \'2020-07-01T10:22:18Z\', type: \'modified\' }, mountpoint: { path: \'/office/\', root: \'/helix-content\' } }',
+      'info: location: https://raw.githubusercontent.com/tripodsan/helix-pages-test/master/office/sub/welcome.md, surrogate key: V7WzCsO/wRee03zH',
+      'warn: unable to purge helix-pages cache. no HLX_PAGES_FASTLY_SVC_ID configured.',
+    ]);
+    assert.deepEqual(result, { });
+  });
+
+  it('index function computes a drive location', async () => {
+    const logger = logging.createTestLogger();
+    const result = await index({
+      __ow_logger: logger,
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'onedrive',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          path: '/helix-content/sub/welcome.docx',
+          time: '2020-07-01T10:22:18Z',
+          type: 'modified',
+          provider: {
+            itemId: 'myItem',
+          },
+        },
+        mountpoint: { path: '/office/', root: '/helix-content' },
+        provider: {
+          driveId: 'mydrive',
+        },
+      },
+    });
+    const out = logger.getOutput().trim().split('\n');
+    assert.equal(out[1], 'info: location: /drives/mydrive/items/myItem, surrogate key: bAuepGgWBaCzPO/Y');
+    assert.deepEqual(result, { });
+  });
+
+  it('index function computes a drive location for resource w/o extension', async () => {
+    const logger = logging.createTestLogger();
+    const result = await index({
+      __ow_logger: logger,
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'github',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          path: '/foo/document',
+          time: '2020-07-01T10:22:18Z',
+          type: 'modified',
+        },
+      },
+    });
+    const out = logger.getOutput().trim().split('\n');
+    assert.equal(out[1], 'info: location: https://raw.githubusercontent.com/tripodsan/helix-pages-test/master/foo/document, surrogate key: Aov/K6CjZkuEV7/r');
     assert.deepEqual(result, { });
   });
 
@@ -55,5 +113,98 @@ describe('Index Tests', () => {
   it('rejects payload w/o ref', async () => {
     const result = await index({ owner: 'owner', repo: 'repo', ref: '' });
     assert.deepEqual(result, { statusCode: 500 });
+  });
+
+  it('index function requires fastly token', async () => {
+    const logger = logging.createTestLogger();
+    const result = await index({
+      __ow_logger: logger,
+      HLX_PAGES_FASTLY_SVC_ID: 'test-service',
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'onedrive',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          path: '/helix-content/sub/welcome.docx',
+          time: '2020-07-01T10:22:18Z',
+          type: 'modified',
+        },
+        mountpoint: { path: '/office/', root: '/helix-content' },
+      },
+    });
+    const out = logger.getOutput().trim().split('\n');
+    assert.deepEqual(out.pop(), 'warn: unable to purge helix-pages cache. no HLX_PAGES_FASTLY_TOKEN configured.');
+    assert.deepEqual(result, { });
+  });
+
+  it('index sends purge request to fastly', async () => {
+    const scope = nock('https://api.fastly.com')
+      .post('/service/test-service/purge')
+      .reply((uri, body) => {
+        assert.deepEqual(body, {
+          surrogate_keys: [
+            'V7WzCsO/wRee03zH',
+          ],
+        });
+        return [200, { 'V7WzCsO/wRee03zH': '19940-1591821325-42118515' }];
+      });
+
+    const logger = logging.createTestLogger();
+    const result = await index({
+      HLX_PAGES_FASTLY_SVC_ID: 'test-service',
+      HLX_PAGES_FASTLY_TOKEN: 'test-token',
+      __ow_logger: logger,
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'onedrive',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          path: '/helix-content/sub/welcome.docx',
+          time: '2020-07-01T10:22:18Z',
+          type: 'modified',
+        },
+        mountpoint: { path: '/office/', root: '/helix-content' },
+      },
+    });
+    const out = logger.getOutput().trim().split('\n');
+    assert.deepEqual(out.pop(), 'info: helix-pages purge result:  { \'V7WzCsO/wRee03zH\': \'19940-1591821325-42118515\' }');
+    assert.deepEqual(result, { });
+
+    await scope.done();
+  });
+
+  it('index sends purge request to fastly and handles errors', async () => {
+    const scope = nock('https://api.fastly.com')
+      .post('/service/test-service/purge')
+      .reply(500);
+
+    const logger = logging.createTestLogger();
+    const result = await index({
+      HLX_PAGES_FASTLY_SVC_ID: 'test-service',
+      HLX_PAGES_FASTLY_TOKEN: 'test-token',
+      // __ow_logger: logger,
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'onedrive',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          path: '/helix-content/sub/welcome.docx',
+          time: '2020-07-01T10:22:18Z',
+          type: 'modified',
+        },
+        mountpoint: { path: '/office/', root: '/helix-content' },
+      },
+    });
+    const out = logger.getOutput().trim().split('\n');
+    assert.ok(out.pop().indexOf('status: 500, name: \'FastlyError\''));
+    assert.deepEqual(result, { });
+
+    await scope.done();
   });
 });
