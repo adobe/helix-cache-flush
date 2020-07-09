@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/adobe/helix-cache-flush/compare/v1.1.1...v1.2.0) (2020-07-09)
+
+
+### Features
+
+* **cache:** purge helix-pages with surrogate key ([7758f12](https://github.com/adobe/helix-cache-flush/commit/7758f129bde4d36e5ce86dbaf3b5e4b1526c221e))
+
 ## [1.1.1](https://github.com/adobe/helix-cache-flush/compare/v1.1.0...v1.1.1) (2020-07-07)
 
 
