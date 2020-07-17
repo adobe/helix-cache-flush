@@ -139,6 +139,30 @@ describe('Index Tests', () => {
     assert.deepEqual(result, { });
   });
 
+  it('index function works for deleted events', async () => {
+    const logger = logging.createTestLogger();
+    const result = await index({
+      __ow_logger: logger,
+      HLX_PAGES_FASTLY_SVC_ID: 'test-service',
+      HLX_PAGES_FASTLY_TOKEN: 'test-token',
+      owner: 'tripodsan',
+      repo: 'helix-pages-test',
+      ref: 'master',
+      observation: {
+        type: 'onedrive',
+        change: {
+          uid: 'uJoyhgL7Iyii3HtM',
+          time: '2020-07-01T10:22:18Z',
+          type: 'deleted',
+        },
+        mountpoint: { path: '/office/', root: '/helix-content' },
+      },
+    });
+    const out = logger.getOutput().trim().split('\n');
+    assert.deepEqual(out.pop(), 'warn: location unknown. ignoring cache purge.');
+    assert.deepEqual(result, { });
+  });
+
   it('index sends purge request to fastly', async () => {
     const scope = nock('https://api.fastly.com')
       .post('/service/test-service/purge')
