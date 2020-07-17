@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/adobe/helix-cache-flush/compare/v1.2.0...v1.2.1) (2020-07-17)
+
+
+### Bug Fixes
+
+* **flush:** avoid errors with flushing deleted events ([#20](https://github.com/adobe/helix-cache-flush/issues/20)) ([71eee5b](https://github.com/adobe/helix-cache-flush/commit/71eee5b388c20ba2d9cd76f035baf5cbcd4cbc54)), closes [#19](https://github.com/adobe/helix-cache-flush/issues/19)
+
 # [1.2.0](https://github.com/adobe/helix-cache-flush/compare/v1.1.1...v1.2.0) (2020-07-09)
 
 
