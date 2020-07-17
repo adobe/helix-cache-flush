@@ -46,6 +46,9 @@ function getOneDriveLocation(change, observation) {
  */
 function getDefaultLocation(change, owner, repo, ref) {
   let { path } = change;
+  if (!path) {
+    return '';
+  }
   // default location is always a markdown resource
   const lastSlash = path.lastIndexOf('/');
   const lastDot = path.lastIndexOf('.');
@@ -85,6 +88,11 @@ async function run(params) {
   if (!location) {
     location = getDefaultLocation(change, owner, repo, ref);
   }
+  if (!location) {
+    log.warn('location unknown. ignoring cache purge.');
+    return {};
+  }
+
   const key = computeSurrogateKey(location);
   log.info(`location: ${location}, surrogate key: ${key}`);
 
