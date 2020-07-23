@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/adobe/helix-cache-flush/compare/v1.2.5...v1.2.6) (2020-07-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-status to v8.1.2 ([#29](https://github.com/adobe/helix-cache-flush/issues/29)) ([f56ab39](https://github.com/adobe/helix-cache-flush/commit/f56ab39086ed874579450b5adad6aea3553c8c41))
+
 ## [1.2.5](https://github.com/adobe/helix-cache-flush/compare/v1.2.4...v1.2.5) (2020-07-23)
 
 
