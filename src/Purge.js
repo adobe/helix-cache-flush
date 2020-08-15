@@ -17,7 +17,6 @@ const HelixBotOptions = require('./HelixBotOptions.js');
 
 class Purge {
   constructor(params) {
-    // eslint-disable-next-line no-underscore-dangle
     this._params = params;
     // eslint-disable-next-line no-underscore-dangle
     this._log = params.__ow_logger || console;

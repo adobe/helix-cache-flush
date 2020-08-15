@@ -118,7 +118,7 @@ describe('Purge Tests', () => {
         installationId: 863255,
         permissions: { contents: 'write', issues: 'write' },
       })
-      .get('/repos/tripodsan/helix-pages-test/contents/%2F.github%2Fhelix-bot.yaml.gpg?ref=devel')
+      .get('/repos/tripodsan/helix-pages-test/contents/.github%2Fhelix-bot.yaml.gpg?ref=devel')
       .reply(200, {
         sha: '1234',
         size: secureConfig.length,
