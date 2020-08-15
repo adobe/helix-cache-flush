@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/adobe/helix-cache-flush/compare/v1.2.11...v1.3.0) (2020-08-15)
+
+
+### Features
+
+* **purge:** add support for bot config ([#39](https://github.com/adobe/helix-cache-flush/issues/39)) ([c4ed572](https://github.com/adobe/helix-cache-flush/commit/c4ed57292230a4be861f0a80a7d5b99b58e39649))
+
 ## [1.2.11](https://github.com/adobe/helix-cache-flush/compare/v1.2.10...v1.2.11) (2020-08-11)
 
 
