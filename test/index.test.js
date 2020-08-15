@@ -44,7 +44,10 @@ describe('Index Tests', () => {
     assert.deepEqual(out, [
       'info: received change event on tripodsan/helix-pages-test/master { type: \'onedrive\', change: { uid: \'uJoyhgL7Iyii3HtM\', path: \'/helix-content/sub/welcome.docx\', time: \'2020-07-01T10:22:18Z\', type: \'modified\' }, mountpoint: { path: \'/office/\', root: \'/helix-content\' } }',
       'info: location: https://raw.githubusercontent.com/tripodsan/helix-pages-test/master/office/sub/welcome.md, surrogate key: V7WzCsO/wRee03zH',
-      'warn: unable to purge helix-pages cache. no HLX_PAGES_FASTLY_SVC_ID configured.',
+      'debug: fetching content from https://raw.githubusercontent.com/tripodsan/helix-pages-test/master/.github/helix-bot.yaml.gpg',
+      'warn: requested content not found.',
+      'warn: Unable to load helix-bot config from tripodsan/helix-pages-test.git/.github/helix-bot.yaml.gpg#master',
+      'info: HLX_PAGES_FASTLY_SVC_ID not configured. Ignoring check for helix-pages repository.',
     ]);
     assert.deepEqual(result, { });
   });
@@ -135,7 +138,7 @@ describe('Index Tests', () => {
       },
     });
     const out = logger.getOutput().trim().split('\n');
-    assert.deepEqual(out.pop(), 'warn: unable to purge helix-pages cache. no HLX_PAGES_FASTLY_TOKEN configured.');
+    assert.deepEqual(out.pop(), 'warn: tripodsan/helix-pages-test/master[0] no fastlyToken configured.');
     assert.deepEqual(result, { });
   });
 
@@ -195,7 +198,7 @@ describe('Index Tests', () => {
       },
     });
     const out = logger.getOutput().trim().split('\n');
-    assert.deepEqual(out.pop(), 'info: helix-pages purge result:  { \'V7WzCsO/wRee03zH\': \'19940-1591821325-42118515\' }');
+    assert.deepEqual(out.pop(), 'info: tripodsan/helix-pages-test/master[0] purge result:  { \'V7WzCsO/wRee03zH\': \'19940-1591821325-42118515\' }');
     assert.deepEqual(result, { });
 
     await scope.done();

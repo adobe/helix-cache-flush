@@ -14,8 +14,8 @@ const { logger } = require('@adobe/openwhisk-action-logger');
 const { wrap: status } = require('@adobe/helix-status');
 const { epsagon } = require('@adobe/helix-epsagon');
 const { Change } = require('@adobe/helix-task-support');
-const Fastly = require('@adobe/fastly-native-promises');
 const { utils: { computeSurrogateKey } } = require('@adobe/helix-shared');
+const Purge = require('./Purge.js');
 
 /**
  * Returns the source location of a OneDrive change event.
@@ -96,29 +96,13 @@ async function run(params) {
   const key = computeSurrogateKey(location);
   log.info(`location: ${location}, surrogate key: ${key}`);
 
-  // todo: check for helix-bot-config to read flush information from
-
-  const {
-    HLX_PAGES_FASTLY_SVC_ID: fastlyServiceId,
-    HLX_PAGES_FASTLY_TOKEN: fastlyToken,
-  } = params;
-
-  if (!fastlyServiceId) {
-    log.warn('unable to purge helix-pages cache. no HLX_PAGES_FASTLY_SVC_ID configured.');
-    return {};
+  const purge = new Purge(params);
+  const cfg = await purge.getPurgeConfig();
+  if (!cfg) {
+    log.warn('unable to purge cache. no purge configuration.');
+  } else {
+    await purge.softPurgeKeys(cfg, [key]);
   }
-  if (!fastlyToken) {
-    log.warn('unable to purge helix-pages cache. no HLX_PAGES_FASTLY_TOKEN configured.');
-    return {};
-  }
-  try {
-    const svc = Fastly(fastlyToken, fastlyServiceId);
-    const purgeResult = (await svc.softPurgeKeys([key]));
-    log.info('helix-pages purge result: ', purgeResult.data);
-  } catch (e) {
-    log.error('helix-pages: error while accessing Fastly API', e);
-  }
-
   return {};
 }
 

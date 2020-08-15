@@ -1,0 +1,24 @@
+{
+  "owner": "adobe",
+  "repo": "theblog",
+  "ref": "master",
+  "observation": {
+    "provider": {
+      "driveId": "b!PpnkewKFAEaDTS6slvlVjh_3ih9lhEZMgYWwps6bPIWZMmLU5xGqS4uES8kIQZbH"
+    },
+    "type": "onedrive",
+    "change": {
+      "uid": "uJoyhgL7Iyii3HtM",
+      "path": "/theblog/en/query-index.xlsx",
+      "time": "2020-07-01T10:22:18Z",
+      "type": "modified",
+      "provider": {
+        "itemId": "01DJQLOWZ2NO76OI7TOZAJNCZQUFLF6I3T"
+      }
+    },
+    "mountpoint": {
+      "path": "/",
+      "root": "/"
+    }
+  }
+}
