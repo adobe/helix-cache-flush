@@ -40,8 +40,8 @@
     "@adobe/helix-task-support": "1.4.0",
     "@adobe/openwhisk-action-logger": "2.2.0",
     "@adobe/openwhisk-action-utils": "4.2.3",
-    "@octokit/auth-app": "^2.4.14",
-    "@octokit/rest": "^18.0.3"
+    "@octokit/auth-app": "2.4.14",
+    "@octokit/rest": "18.0.3"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "1.1.3",
