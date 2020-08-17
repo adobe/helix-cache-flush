@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/adobe/helix-cache-flush/compare/v1.3.1...v1.3.2) (2020-08-17)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([#41](https://github.com/adobe/helix-cache-flush/issues/41)) ([f5c01e1](https://github.com/adobe/helix-cache-flush/commit/f5c01e1b6f02fa005eb9a58b6d8738a0ebc6f8c2))
+
 ## [1.3.1](https://github.com/adobe/helix-cache-flush/compare/v1.3.0...v1.3.1) (2020-08-16)
 
 
