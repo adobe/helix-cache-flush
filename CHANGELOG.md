@@ -1,3 +1,10 @@
+## [1.3.9](https://github.com/adobe/helix-cache-flush/compare/v1.3.8...v1.3.9) (2020-09-06)
+
+
+### Bug Fixes
+
+* **deps:** update external fixes ([#56](https://github.com/adobe/helix-cache-flush/issues/56)) ([bf5b165](https://github.com/adobe/helix-cache-flush/commit/bf5b165dbe02feadee484b26e9b905ec928f88b5))
+
 ## [1.3.8](https://github.com/adobe/helix-cache-flush/compare/v1.3.7...v1.3.8) (2020-09-04)
 
 
