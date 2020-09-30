@@ -1,3 +1,10 @@
+## [1.3.19](https://github.com/adobe/helix-cache-flush/compare/v1.3.18...v1.3.19) (2020-09-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/openwhisk-action-utils to v4.3.1 ([#69](https://github.com/adobe/helix-cache-flush/issues/69)) ([6568311](https://github.com/adobe/helix-cache-flush/commit/6568311cf3364db713ee9c7949758e88e00621e4))
+
 ## [1.3.18](https://github.com/adobe/helix-cache-flush/compare/v1.3.17...v1.3.18) (2020-09-28)
 
 
