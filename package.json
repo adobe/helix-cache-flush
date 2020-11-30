@@ -37,7 +37,7 @@
     "@adobe/helix-epsagon": "1.5.4",
     "@adobe/helix-shared": "7.16.1",
     "@adobe/helix-status": "8.2.2",
-    "@adobe/helix-task-support": "1.5.2",
+    "@adobe/helix-task-support": "1.5.3",
     "@adobe/openwhisk-action-logger": "2.2.2",
     "@adobe/openwhisk-action-utils": "4.3.2",
     "@octokit/auth-app": "2.10.2",
