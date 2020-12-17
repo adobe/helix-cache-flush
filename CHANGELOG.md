@@ -1,3 +1,10 @@
+## [1.3.49](https://github.com/adobe/helix-cache-flush/compare/v1.3.48...v1.3.49) (2020-12-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-status to v9 ([#109](https://github.com/adobe/helix-cache-flush/issues/109)) ([c35c32b](https://github.com/adobe/helix-cache-flush/commit/c35c32ba40536e8ecd1c089e4c513eb637d8c2a1))
+
 ## [1.3.48](https://github.com/adobe/helix-cache-flush/compare/v1.3.47...v1.3.48) (2020-12-16)
 
 
