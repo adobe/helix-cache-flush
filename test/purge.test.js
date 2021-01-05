@@ -33,7 +33,7 @@ const TEST_PUB_KEY_FILE = path.resolve(__dirname, 'fixtures', 'pubkey.asc');
 
 describe('Purge Tests', () => {
   it('loads purge config via raw github', async () => {
-    const data = yaml.safeDump({
+    const data = yaml.dump({
       version: 1,
       branch: 'devel',
       caches: [{
@@ -84,7 +84,7 @@ describe('Purge Tests', () => {
   });
 
   it('loads purge config via bot credentials', async () => {
-    const data = yaml.safeDump({
+    const data = yaml.dump({
       version: 1,
       branch: 'devel',
       caches: [{
@@ -155,7 +155,7 @@ describe('Purge Tests', () => {
   });
 
   it('loads purge config via bot credentials but not bot installed', async () => {
-    const data = yaml.safeDump({
+    const data = yaml.dump({
       version: 1,
       branch: 'devel',
       caches: [{
