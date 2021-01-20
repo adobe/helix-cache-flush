@@ -1,3 +1,10 @@
+## [1.3.60](https://github.com/adobe/helix-cache-flush/compare/v1.3.59...v1.3.60) (2021-01-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/fastly-native-promises to v1.19.5 ([#122](https://github.com/adobe/helix-cache-flush/issues/122)) ([15ee040](https://github.com/adobe/helix-cache-flush/commit/15ee0404fa6aa4e90d59656b3c725265502c886e))
+
 ## [1.3.59](https://github.com/adobe/helix-cache-flush/compare/v1.3.58...v1.3.59) (2021-01-14)
 
 
