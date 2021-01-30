@@ -1,3 +1,10 @@
+## [1.3.69](https://github.com/adobe/helix-cache-flush/compare/v1.3.68...v1.3.69) (2021-01-30)
+
+
+### Bug Fixes
+
+* **ci:** use latest orb ([353a6bc](https://github.com/adobe/helix-cache-flush/commit/353a6bc16806fc229c6264bb26f69ffb35aaa51b))
+
 ## [1.3.68](https://github.com/adobe/helix-cache-flush/compare/v1.3.67...v1.3.68) (2021-01-30)
 
 
