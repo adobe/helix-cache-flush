@@ -1,3 +1,10 @@
+## [1.3.73](https://github.com/adobe/helix-cache-flush/compare/v1.3.72...v1.3.73) (2021-02-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-shared to v7.19.5 ([#137](https://github.com/adobe/helix-cache-flush/issues/137)) ([a36973b](https://github.com/adobe/helix-cache-flush/commit/a36973beb81d0fbccb870f95af969b409c0b841d))
+
 ## [1.3.72](https://github.com/adobe/helix-cache-flush/compare/v1.3.71...v1.3.72) (2021-02-01)
 
 
