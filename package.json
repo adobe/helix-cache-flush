@@ -36,7 +36,7 @@
     "@adobe/helix-bot-shared": "1.6.10",
     "@adobe/helix-epsagon": "1.5.8",
     "@adobe/helix-shared": "7.19.5",
-    "@adobe/helix-status": "9.0.1",
+    "@adobe/helix-status": "9.0.2",
     "@adobe/helix-task-support": "1.5.3",
     "@adobe/openwhisk-action-logger": "2.3.1",
     "@adobe/openwhisk-action-utils": "4.4.0",
