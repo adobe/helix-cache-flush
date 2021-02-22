@@ -1,3 +1,11 @@
+## [1.3.90](https://github.com/adobe/helix-cache-flush/compare/v1.3.89...v1.3.90) (2021-02-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-shared to v7.19.10 ([#157](https://github.com/adobe/helix-cache-flush/issues/157)) ([201ac52](https://github.com/adobe/helix-cache-flush/commit/201ac5201af1245b7b47ce7a666d401a7bd34327))
+* **deps:** update dependency @octokit/rest to v18.2.0 ([#156](https://github.com/adobe/helix-cache-flush/issues/156)) ([c265110](https://github.com/adobe/helix-cache-flush/commit/c26511055ad9c14f66302a2aae1fd3e2d036a81d))
+
 ## [1.3.89](https://github.com/adobe/helix-cache-flush/compare/v1.3.88...v1.3.89) (2021-02-19)
 
 
