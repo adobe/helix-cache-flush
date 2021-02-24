@@ -1,3 +1,10 @@
+## [1.3.92](https://github.com/adobe/helix-cache-flush/compare/v1.3.91...v1.3.92) (2021-02-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octokit/auth-app to v3 ([#160](https://github.com/adobe/helix-cache-flush/issues/160)) ([e8179fc](https://github.com/adobe/helix-cache-flush/commit/e8179fc11786e95a47fbaa4425ada5281e5926a2))
+
 ## [1.3.91](https://github.com/adobe/helix-cache-flush/compare/v1.3.90...v1.3.91) (2021-02-22)
 
 
