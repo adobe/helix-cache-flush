@@ -35,7 +35,7 @@
     "@adobe/fastly-native-promises": "1.22.1",
     "@adobe/helix-bot-shared": "1.6.15",
     "@adobe/helix-epsagon": "1.5.8",
-    "@adobe/helix-shared": "7.21.0",
+    "@adobe/helix-shared": "7.21.1",
     "@adobe/helix-status": "9.0.6",
     "@adobe/helix-task-support": "1.5.3",
     "@adobe/openwhisk-action-logger": "2.4.1",
