@@ -1,3 +1,10 @@
+## [1.3.111](https://github.com/adobe/helix-cache-flush/compare/v1.3.110...v1.3.111) (2021-03-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-status to v9.1.0 ([#184](https://github.com/adobe/helix-cache-flush/issues/184)) ([259ffac](https://github.com/adobe/helix-cache-flush/commit/259ffac33fc545284a5a57330ff6a0aa4eb97149))
+
 ## [1.3.110](https://github.com/adobe/helix-cache-flush/compare/v1.3.109...v1.3.110) (2021-03-09)
 
 
