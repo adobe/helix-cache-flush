@@ -33,9 +33,9 @@
   "homepage": "https://github.com/adobe/helix-cache-flush#readme",
   "dependencies": {
     "@adobe/fastly-native-promises": "1.22.2",
-    "@adobe/helix-bot-shared": "1.6.16",
+    "@adobe/helix-bot-shared": "1.6.17",
     "@adobe/helix-epsagon": "1.6.0",
-    "@adobe/helix-shared": "7.21.2",
+    "@adobe/helix-shared": "7.21.3",
     "@adobe/helix-status": "9.1.0",
     "@adobe/helix-task-support": "1.5.3",
     "@adobe/openwhisk-action-logger": "2.4.1",
