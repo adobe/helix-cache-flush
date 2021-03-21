@@ -1,3 +1,10 @@
+## [1.3.114](https://github.com/adobe/helix-cache-flush/compare/v1.3.113...v1.3.114) (2021-03-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-bot-shared to v1.6.18 ([f09a4c8](https://github.com/adobe/helix-cache-flush/commit/f09a4c89db2334217e5f767287dd3c6eb30ebbb7))
+
 ## [1.3.113](https://github.com/adobe/helix-cache-flush/compare/v1.3.112...v1.3.113) (2021-03-15)
 
 
