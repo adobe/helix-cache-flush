@@ -1,3 +1,10 @@
+## [1.3.128](https://github.com/adobe/helix-cache-flush/compare/v1.3.127...v1.3.128) (2021-04-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/openwhisk-action-logger to v2.4.2 ([#204](https://github.com/adobe/helix-cache-flush/issues/204)) ([ae1399b](https://github.com/adobe/helix-cache-flush/commit/ae1399bc8e9528da183a6b27255b33e082f360be))
+
 ## [1.3.127](https://github.com/adobe/helix-cache-flush/compare/v1.3.126...v1.3.127) (2021-03-31)
 
 
