@@ -1,3 +1,10 @@
+## [1.3.135](https://github.com/adobe/helix-cache-flush/compare/v1.3.134...v1.3.135) (2021-04-09)
+
+
+### Bug Fixes
+
+* **deps:** update adobe fixes ([#212](https://github.com/adobe/helix-cache-flush/issues/212)) ([b9b6c55](https://github.com/adobe/helix-cache-flush/commit/b9b6c55ae323deeafc4491304ca44e4806d408ee))
+
 ## [1.3.134](https://github.com/adobe/helix-cache-flush/compare/v1.3.133...v1.3.134) (2021-04-08)
 
 
