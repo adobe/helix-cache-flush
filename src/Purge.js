@@ -90,7 +90,7 @@ class Purge {
       const appOctokit = new Octokit({
         authStrategy: createAppAuth,
         auth: {
-          id: this._opts.githubAppId,
+          appId: this._opts.githubAppId,
           privateKey: this._opts.githubAppPrivateKey,
         },
       });
