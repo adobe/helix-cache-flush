@@ -9,12 +9,12 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-const { wrap } = require('@adobe/openwhisk-action-utils');
+const wrap = require('@adobe/helix-shared-wrap');
 const { logger } = require('@adobe/openwhisk-action-logger');
 const { wrap: status } = require('@adobe/helix-status');
 const { epsagon } = require('@adobe/helix-epsagon');
 const { Change } = require('@adobe/helix-task-support');
-const { utils: { computeSurrogateKey } } = require('@adobe/helix-shared');
+const { computeSurrogateKey } = require('@adobe/helix-shared-utils');
 const Purge = require('./Purge.js');
 
 /**
