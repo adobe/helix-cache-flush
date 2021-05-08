@@ -61,7 +61,7 @@ describe('Purge Tests', () => {
       __ow_logger: logger,
       HLX_PAGES_FASTLY_SVC_ID: 'test-service',
       HLX_PAGES_FASTLY_TOKEN: 'test-token',
-      HLX_BOT_PRIVATE_KEY: await fse.readFile(TEST_PRIV_KEY_FILE),
+      HLX_BOT_PRIVATE_KEY: await fse.readFile(TEST_PRIV_KEY_FILE, 'utf-8'),
       HLX_BOT_PRIVATE_KEY_PW: 'test',
       owner: 'tripodsan',
       repo: 'helix-pages-test',
@@ -130,7 +130,7 @@ describe('Purge Tests', () => {
     const purge = new Purge({
       HLX_PAGES_FASTLY_SVC_ID: 'test-service',
       HLX_PAGES_FASTLY_TOKEN: 'test-token',
-      HLX_BOT_PRIVATE_KEY: await fse.readFile(TEST_PRIV_KEY_FILE),
+      HLX_BOT_PRIVATE_KEY: await fse.readFile(TEST_PRIV_KEY_FILE, 'utf-8'),
       HLX_BOT_PRIVATE_KEY_PW: 'test',
       GH_APP_ID: '1234',
       GH_APP_PRIVATE_KEY: await fse.readFile(GH_PRIV_KEY_FILE),
@@ -185,7 +185,7 @@ describe('Purge Tests', () => {
     const purge = new Purge({
       HLX_PAGES_FASTLY_SVC_ID: 'test-service',
       HLX_PAGES_FASTLY_TOKEN: 'test-token',
-      HLX_BOT_PRIVATE_KEY: await fse.readFile(TEST_PRIV_KEY_FILE),
+      HLX_BOT_PRIVATE_KEY: await fse.readFile(TEST_PRIV_KEY_FILE, 'utf-8'),
       HLX_BOT_PRIVATE_KEY_PW: 'test',
       GH_APP_ID: '1234',
       GH_APP_PRIVATE_KEY: await fse.readFile(GH_PRIV_KEY_FILE),
