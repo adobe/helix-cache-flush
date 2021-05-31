@@ -1,3 +1,10 @@
+## [1.3.156](https://github.com/adobe/helix-cache-flush/compare/v1.3.155...v1.3.156) (2021-05-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-epsagon to v1.6.7 ([#248](https://github.com/adobe/helix-cache-flush/issues/248)) ([002bba4](https://github.com/adobe/helix-cache-flush/commit/002bba4e15591e66725775f11d8c9f1b33265962))
+
 ## [1.3.155](https://github.com/adobe/helix-cache-flush/compare/v1.3.154...v1.3.155) (2021-05-28)
 
 
