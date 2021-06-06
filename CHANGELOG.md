@@ -1,3 +1,10 @@
+## [1.3.157](https://github.com/adobe/helix-cache-flush/compare/v1.3.156...v1.3.157) (2021-06-06)
+
+
+### Bug Fixes
+
+* **deps:** update external fixes ([#249](https://github.com/adobe/helix-cache-flush/issues/249)) ([870e5ed](https://github.com/adobe/helix-cache-flush/commit/870e5ed6d9952c277f001cdbf5d0b786855cb555))
+
 ## [1.3.156](https://github.com/adobe/helix-cache-flush/compare/v1.3.155...v1.3.156) (2021-05-31)
 
 
