@@ -1,6 +1,6 @@
 {
   "name": "@adobe/helix-cache-flush",
-  "version": "1.3.158",
+  "version": "1.3.159",
   "private": true,
   "description": "Helix Cache Flush Service",
   "main": "src/index.js",
