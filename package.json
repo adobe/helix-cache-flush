@@ -34,7 +34,7 @@
   "dependencies": {
     "@adobe/fastly-native-promises": "1.23.5",
     "@adobe/helix-bot-shared": "1.6.37",
-    "@adobe/helix-epsagon": "1.6.8",
+    "@adobe/helix-epsagon": "1.6.9",
     "@adobe/helix-shared-utils": "1.0.3",
     "@adobe/helix-shared-wrap": "1.0.0",
     "@adobe/helix-status": "9.2.2",
