@@ -1,3 +1,10 @@
+## [1.3.180](https://github.com/adobe/helix-cache-flush/compare/v1.3.179...v1.3.180) (2021-09-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-task-support to v1.5.4 ([#283](https://github.com/adobe/helix-cache-flush/issues/283)) ([ead354a](https://github.com/adobe/helix-cache-flush/commit/ead354a812fbca67a5468a44f4a35805c91910da))
+
 ## [1.3.179](https://github.com/adobe/helix-cache-flush/compare/v1.3.178...v1.3.179) (2021-09-20)
 
 
