@@ -45,7 +45,7 @@
     "@octokit/rest": "18.11.1"
   },
   "devDependencies": {
-    "@adobe/eslint-config-helix": "1.1.5",
+    "@adobe/eslint-config-helix": "1.2.0",
     "@adobe/helix-testutils": "0.4.5",
     "@adobe/openwhisk-action-builder": "3.0.30",
     "@semantic-release/changelog": "6.0.0",
