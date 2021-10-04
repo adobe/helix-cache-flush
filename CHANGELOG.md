@@ -1,3 +1,10 @@
+## [1.3.183](https://github.com/adobe/helix-cache-flush/compare/v1.3.182...v1.3.183) (2021-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octokit/rest to v18.11.4 ([#287](https://github.com/adobe/helix-cache-flush/issues/287)) ([937d2b0](https://github.com/adobe/helix-cache-flush/commit/937d2b0e5972bc7e1e97d1399a285535ea3e35ab))
+
 ## [1.3.182](https://github.com/adobe/helix-cache-flush/compare/v1.3.181...v1.3.182) (2021-09-27)
 
 
