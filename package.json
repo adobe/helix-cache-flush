@@ -42,7 +42,7 @@
     "@adobe/openwhisk-action-logger": "2.4.6",
     "@adobe/openwhisk-action-utils": "4.4.6",
     "@octokit/auth-app": "3.6.0",
-    "@octokit/rest": "18.11.1"
+    "@octokit/rest": "18.11.4"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "1.2.0",
