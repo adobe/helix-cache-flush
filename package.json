@@ -40,7 +40,7 @@
     "@adobe/helix-status": "9.2.4",
     "@adobe/helix-task-support": "1.5.4",
     "@adobe/openwhisk-action-logger": "2.4.6",
-    "@adobe/openwhisk-action-utils": "4.4.6",
+    "@adobe/openwhisk-action-utils": "4.4.7",
     "@octokit/auth-app": "3.6.1",
     "@octokit/rest": "18.12.0"
   },
