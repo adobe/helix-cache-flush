@@ -33,7 +33,7 @@
   "homepage": "https://github.com/adobe/helix-cache-flush#readme",
   "dependencies": {
     "@adobe/fastly-native-promises": "2.0.0",
-    "@adobe/helix-bot-shared": "1.6.42",
+    "@adobe/helix-bot-shared": "1.6.43",
     "@adobe/helix-epsagon": "1.6.9",
     "@adobe/helix-shared-utils": "1.0.4",
     "@adobe/helix-shared-wrap": "1.0.0",
