@@ -1,3 +1,5 @@
+> **Note: this repository and service are no longer maintained**
+
 # Helix Cache Flush Service
 
 > The `helix-cache-flush` service is an OpenWhisk action that can be registered as helix observation task. It will react on content changes via the observation service and notify the inner CDN with cache purge requests.
